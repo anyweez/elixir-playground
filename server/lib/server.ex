@@ -1,12 +1,10 @@
 defmodule ChatServer do
-    # Import the Messages module, which keeps track of all message-related state
-    # between requests. This could also be expanded out to keep track of much more than
-    # just strings.
-    require Messages
+    # using Application makes it so that start() will run when we 'mix run'
+    use Application
     # TODO: soon I'll also import an adapter here that will expose Phoenix connections
     # (websockets to browsers, I think?).
     
-    def main() do
+    def start(_, _) do
         IO.puts "Launching server..."
 
         case get_msg(:get, 0) do
@@ -28,6 +26,18 @@ defmodule ChatServer do
         newer = User.get(current, :name) # get the name to confirm its 'Paul Bunyan'
         age = User.get(current, :age) # get the age to confirm its 47
         IO.puts "Player, age: " <> newer <> ", " <> to_string(age)
+        
+        # Launch the router
+        IO.puts ChatServer.Router
+        ChatServer.Router.start()
+        
+        # TODO: not positive if `self` is the right value to return here or not...
+        {:ok, self}
+    end
+
+    # TODO: destructor of sorts; handle cleanup tasks, state syncing, etc    
+    def stop(_) do
+    
     end
     
     # get_msg has two clauses, and Elixir will try to match in the order that they're defined.

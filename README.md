@@ -19,5 +19,7 @@ Test application containing Elixir backend and simple JS frontend
     - Agents! Pretty slick. 
 - Appreciate how awesome that is
     - It's very awesome. At this point I'm actually feeling my brain start to change.
+    - I saved a lot of suffering by reading over the [quick Mix intro](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html). 
+      `mix new` in particular is pretty sweet.
 - Create basic Phoenix module to listen for requests (GET and POST)
 - Add messages and retrieve messages based on Phoenix requests
