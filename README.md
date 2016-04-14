@@ -1,5 +1,8 @@
 # elixir-playground
-Test application containing Elixir backend and simple JS frontend
+Test application containing Elixir backend and simple JS frontend.
+
+- Run `gulp` from inside of `client/web` to build the frontend, then open `index.html` from the `public/` folder.
+- Run `mix phoenix.server` from inside of `server/` to build and run the backend.
 
 ## Next steps
 - **Compile my first application, break it up into multiple modules**
