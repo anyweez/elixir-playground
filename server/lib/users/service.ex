@@ -1,8 +1,22 @@
-defmodule ChatServer do
+defmodule UserService.Worker do
+    use GenServer
+    
     # using Application makes it so that start() will run when we 'mix run'
-    use Application
+    #    use Application
     # TODO: soon I'll also import an adapter here that will expose Phoenix connections
     # (websockets to browsers, I think?).
+    
+    def start_link(current_number) do
+        # Create a single user to kick things off
+        UserService.User.create(:user1)
+        UserService.User.set(:user1, {:name, "Steve Martin"})
+        # Kick off a process for the UserService and return the pid
+        GenServer.start_link(__MODULE__, current_number, name: :users)
+    end
+    
+    def get(:user1, :name) do
+        {:name, UserService.User.get(:user1, :name)}
+    end
     
     def start(_, _) do
         IO.puts "Launching server..."

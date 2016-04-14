@@ -1,0 +1,59 @@
+$sidebars: 1%;
+
+body {
+    margin: 0;
+    font-family: 'Hind', sans-serif;
+}
+
+header {
+    padding: 2% $sidebars;
+    margin-bottom: 1%;
+    background-color: #333;
+    color: #ccc;
+    
+    h1 {
+        margin: 0;      
+    }
+}
+
+main {
+    padding: 0 $sidebars;
+    
+    input[type="text"] {
+        padding: 5px;
+        width: 80%;
+        height: 40px;
+        box-sizing: border-box;
+        
+        font-size: 1.2em;
+    }
+    
+    button {
+        width: 15%;
+        height: 40px;
+        box-sizing: border-box;
+        font-size: 1.2em;
+    }
+    
+    #chat-messages {
+        min-height: 600px;
+        border: 2px solid black;
+        list-style-type: none;
+        padding: 0;
+        
+        .message {
+            padding: .5%;
+            .message-date {
+                font-weight: 600;         
+            }
+            .message-body {
+                
+            }
+            
+            &.highlight {
+                background-color: #ccc;
+            }
+        }
+        
+    }
+}

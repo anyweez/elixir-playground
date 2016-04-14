@@ -1,0 +1,22 @@
+{
+  "name": "elixir-playground",
+  "version": "1.0.0",
+  "description": "Trying to make a basic server in Elixir + Phoenix",
+  "main": "gulp",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anyweez/elixir-playground.git"
+  },
+  "author": "Luke Segars (anyweez@)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/anyweez/elixir-playground/issues"
+  },
+  "homepage": "https://github.com/anyweez/elixir-playground#readme",
+  "dependencies": {
+    "phoenix-socket": "^1.1.3"
+  }
+}

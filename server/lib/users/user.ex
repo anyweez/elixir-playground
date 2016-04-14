@@ -1,4 +1,4 @@
-defmodule User do 
+defmodule UserService.User do 
     
     def create(id) do
         Agent.start_link(fn -> %{:name => "Anonymous", :age => nil} end, name: id)
